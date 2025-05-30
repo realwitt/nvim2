@@ -1,4 +1,4 @@
-return {
+return { {
   'mbbill/undotree',
   config = function()
     -- Enable persistent undo history
@@ -13,8 +13,7 @@ return {
     vim.g.undotree_SetFocusWhenToggle = 1
     vim.g.undotree_DiffCommand = "diff"
 
-    -- Add keymapping for toggling Undotree is now in Snacks configuration
-    -- vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndotree' })
+    -- Add keymapping for toggling Undotree
+    vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndotree' })
   end,
-}
-
+} }

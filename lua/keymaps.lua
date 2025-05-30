@@ -14,8 +14,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
--- NOTE: Moved to Snacks configuration
--- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -27,11 +26,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
--- NOTE: Moved to Snacks configuration
--- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
--- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
--- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
--- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -49,18 +47,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- vim: ts=2 sts=2 sw=2 et
 
--- NOTE: The following keymaps have been moved to the Snacks configuration:
-
 -- show errors using leaderkey instead of ctrl, blech
--- vim.keymap.set('n', '<leader>pp', vim.diagnostic.goto_prev, { desc = 'Go to [P]revious diagnostic message' })
--- vim.keymap.set('n', '<leader>pn', vim.diagnostic.goto_next, { desc = 'Go to [N]ext diagnostic message' })
--- vim.keymap.set('n', '<leader>ps', vim.diagnostic.open_float, { desc = '[S]how diagnostic under cursor' })
--- vim.keymap.set('n', '<leader>pq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>pp', vim.diagnostic.goto_prev, { desc = 'Go to [P]revious diagnostic message' })
+vim.keymap.set('n', '<leader>pn', vim.diagnostic.goto_next, { desc = 'Go to [N]ext diagnostic message' })
+vim.keymap.set('n', '<leader>ps', vim.diagnostic.open_float, { desc = '[S]how diagnostic under cursor' })
+vim.keymap.set('n', '<leader>pq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- use leaderkey instead of ctrl for jumping to prev/next jump history
 -- vim.keymap.set('n', '<leader>o', '<C-o>', { desc = 'Go to previous cursor position in jump list' })
 -- vim.keymap.set('n', '<leader>i', '<C-i>', { desc = 'Go to next cursor position in jump list' })
 
--- Rename element keybinding
--- vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, { desc = 'Rename Element' })
 
+-- Rebind all Ctrl+w window commands to use leader+j instead
+-- This preserves all the existing window command functionality but changes the prefix
+
+-- Create the mapping from leader+j to Ctrl+w
+-- ughhhhh it not working
+-- vim.keymap.set('n', '<C-w>', '<leader>j', { desc = 'Window command prefix' })

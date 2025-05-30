@@ -67,9 +67,9 @@ return {
     },
     config = function()
       -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-      vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
-      vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
-      vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
+      vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
+      vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
+      vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
       vim.fn.sign_define('DiagnosticSignHint', { text = '󰌵', texthl = 'DiagnosticSignHint' })
 
       require('neo-tree').setup {
@@ -102,13 +102,13 @@ return {
             highlight = 'NeoTreeIndentMarker',
             -- expander config, needed for nesting files
             with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
-            expander_collapsed = '',
-            expander_expanded = '',
+            expander_collapsed = '',
+            expander_expanded = '',
             expander_highlight = 'NeoTreeExpander',
           },
           icon = {
-            folder_closed = '',
-            folder_open = '',
+            folder_closed = '',
+            folder_open = '',
             folder_empty = '󰜌',
             provider = function(icon, node, state) -- default icon provider utilizes nvim-web-devicons if available
               if node.type == 'file' or node.type == 'terminal' then
@@ -139,15 +139,15 @@ return {
             symbols = {
               -- Change type
               added = '', -- or "✚", but this is redundant info if you use git_status_colors on the name
-              modified = '', -- or "", but this is redundant info if you use git_status_colors on the name
+              modified = '', -- or "", but this is redundant info if you use git_status_colors on the name
               deleted = '✖', -- this can only be used in the git_status source
               renamed = '󰁕', -- this can only be used in the git_status source
               -- Status type
-              untracked = '',
-              ignored = '',
+              untracked = '',
+              ignored = '',
               unstaged = '󰄱',
-              staged = '',
-              conflict = '',
+              staged = '',
+              conflict = '',
             },
           },
           -- If you don't want to use these columns, you can set `enabled = false` for each of them individually
@@ -386,9 +386,7 @@ return {
         },
       }
 
-      -- NOTE: The leader key mapping has been moved to Snacks configuration
-      -- vim.keymap.set('n', '<leader>e', '<Cmd>Neotree reveal<CR>')
+      vim.keymap.set('n', '<leader>e', '<Cmd>Neotree reveal<CR>')
     end,
   },
 }
-
